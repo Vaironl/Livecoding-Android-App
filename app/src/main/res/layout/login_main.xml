@@ -4,77 +4,96 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="dozapps.com.livecodingtv.MainActivity">
+    tools:context=".Login_MainActivity">
 
-    <TextView
-        android:id="@+id/loginHintTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:gravity="center"
-        android:text="Login with Email and Password"
-        android:textSize="28sp" />
-
-    <ImageView
-        android:id="@+id/loginBannerIV"
+    <include
+        android:id="@+id/toolBar"
+        layout="@layout/tool_bar"
         android:layout_width="match_parent"
-        android:layout_height="64dp"
-        android:layout_below="@id/loginHintTV"
-        android:layout_marginTop="12dp"
-        android:background="@color/colorPrimaryDark" />
+        android:layout_height="wrap_content" />
 
-    <TextView
+    <dozapps.com.livecodingtv.SlidingTabLayout
+        android:id="@+id/tabs"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/loginBannerIV"
-        android:gravity="center"
-        android:text="LiveCoding"
-        android:textColor="#fff"
-        android:textSize="32sp" />
+        android:elevation="2dp"
+        android:background="@color/colorPrimary"
+        />
 
-    <EditText
-        android:id="@+id/usernameET"
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/loginBannerIV"
-        android:layout_marginTop="32dp"
-        android:hint="Username or e-mail"
-        android:textSize="32sp" />
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        ></android.support.v4.view.ViewPager>
 
-    <EditText
-        android:id="@+id/userPasswordET"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/usernameET"
-        android:layout_marginTop="46dp"
-        android:hint="Password"
-        android:inputType="textPassword"
-        android:textSize="32sp" />
+    <!--<TextView-->
+        <!--android:id="@+id/loginHintTV"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_below="@id/toolBar"-->
+        <!--android:gravity="center"-->
+        <!--android:text="Login with Email and Password"-->
+        <!--android:textSize="28sp" />-->
 
-    <CheckBox
-        android:id="@+id/rememberuserCB"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/userPasswordET"
-        android:layout_marginTop="32dp"
-        android:text="Remember me"
-        android:textColor="#707070"
-        android:textSize="28sp" />
+    <!--<ImageView-->
+        <!--android:id="@+id/loginBannerIV"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="38dp"-->
+        <!--android:layout_below="@id/loginHintTV"-->
+        <!--android:layout_marginTop="12dp"-->
+        <!--android:background="@color/colorPrimaryDark" />-->
 
-    <Button
-        android:id="@+id/userLoginB"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/rememberuserCB"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="12dp"
-        android:background="?android:attr/selectableItemBackground"
-        android:text="Login"
-        android:textColor="#31a9ff"
-        android:textSize="32sp" />
+    <!--<TextView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignBottom="@id/loginBannerIV"-->
+        <!--android:gravity="center"-->
+        <!--android:text="LiveCoding"-->
+        <!--android:textColor="#fff"-->
+        <!--android:textSize="32sp" />-->
+
+    <!--<EditText-->
+        <!--android:id="@+id/usernameET"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@id/loginBannerIV"-->
+        <!--android:layout_marginTop="32dp"-->
+        <!--android:hint="Username or e-mail"-->
+        <!--android:textSize="32sp" />-->
+
+    <!--<EditText-->
+        <!--android:id="@+id/userPasswordET"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@id/usernameET"-->
+        <!--android:layout_marginTop="46dp"-->
+        <!--android:hint="Password"-->
+        <!--android:inputType="textPassword"-->
+        <!--android:textSize="32sp" />-->
+
+    <!--<CheckBox-->
+        <!--android:id="@+id/rememberuserCB"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@id/userPasswordET"-->
+        <!--android:layout_marginTop="32dp"-->
+        <!--android:text="Remember me"-->
+        <!--android:textColor="#707070"-->
+        <!--android:textSize="28sp" />-->
+
+    <!--<Button-->
+        <!--android:id="@+id/userLoginB"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@id/rememberuserCB"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_marginTop="12dp"-->
+        <!--android:background="?android:attr/selectableItemBackground"-->
+        <!--android:text="Login"-->
+        <!--android:textColor="#31a9ff"-->
+        <!--android:textSize="32sp" />-->
 
 
 </RelativeLayout>
