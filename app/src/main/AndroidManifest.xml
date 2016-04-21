@@ -15,11 +15,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Livestreams">
+        <activity android:name=".Livestreams_Preview">
             <intent-filter>
-                <action android:name="android.intent.action.STREAMS" />
+                <action android:name="android.intent.action.LIVESTREAMS_PREVIEW" />
 
-                <category android:name="android.intent.category.STREAMSVIEW" />
+                <category android:name="android.intent.category.LIVESTREAMS" />
             </intent-filter>
         </activity>
     </application>
