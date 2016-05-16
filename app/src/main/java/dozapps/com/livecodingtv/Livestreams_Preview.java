@@ -28,10 +28,10 @@ public class Livestreams_Preview extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.livestreams_preview);
 
+
+
         toolbar = (Toolbar) findViewById(R.id.toolBar);
-
         adapter = new ViewPagerAdapter(getSupportFragmentManager(), titles, numOfTabs);
-
         pager = (ViewPager) findViewById(R.id.pager);
         pager.setAdapter(adapter);
 
