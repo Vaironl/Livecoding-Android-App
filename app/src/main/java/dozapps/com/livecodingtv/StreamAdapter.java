@@ -2,12 +2,10 @@ package dozapps.com.livecodingtv;
 
 import android.app.Activity;
 import android.content.Context;
-import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -20,6 +18,7 @@ public class StreamAdapter extends ArrayAdapter {
     public StreamAdapter(Context context, int resource, List objects) {
         super(context, resource, objects);
     }
+
 
 
     private static class StreamHolder {
@@ -54,12 +53,12 @@ public class StreamAdapter extends ArrayAdapter {
             streamHolder = (StreamHolder) row.getTag();
         }
 
-        Streams currentStream = (Streams) this.getItem(position);
+        Stream currentStream = (Stream) this.getItem(position);
 
         streamHolder.streamUsername.setText(currentStream.getUsername());
         streamHolder.streamTitle.setText(currentStream.getTitle());
         streamHolder.streamViewCount.setText(String.valueOf(currentStream.getViewCount()));
-        streamHolder.streamLanguage.setText(currentStream.getProgrammingLanguage());
+        streamHolder.streamLanguage.setText(currentStream.getCodingCategory());
 
 
         return row;
