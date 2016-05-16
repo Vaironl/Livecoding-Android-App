@@ -1,4 +1,4 @@
-package dozapps.com.livecodingtv;
+package dozapps.com.livecodingtv.Stream;
 
 import android.app.Activity;
 import android.content.Context;
@@ -10,6 +10,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
+
+import dozapps.com.livecodingtv.R;
 
 /**
  * Created by vaironl on 4/21/16.
@@ -55,6 +57,7 @@ public class StreamAdapter extends ArrayAdapter {
 
         Stream currentStream = (Stream) this.getItem(position);
 
+        streamHolder.streamPreviewImage.setImageBitmap(currentStream.getThumbnail());
         streamHolder.streamUsername.setText(currentStream.getUsername());
         streamHolder.streamTitle.setText(currentStream.getTitle());
         streamHolder.streamViewCount.setText(String.valueOf(currentStream.getViewCount()));

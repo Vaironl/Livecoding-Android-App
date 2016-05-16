@@ -1,4 +1,10 @@
-package dozapps.com.livecodingtv;
+package dozapps.com.livecodingtv.Stream;
+
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.AsyncHttpResponseHandler;
+import cz.msebera.android.httpclient.Header;
 
 /**
  * Created by vaironl on 4/21/16.
@@ -6,9 +12,12 @@ package dozapps.com.livecodingtv;
 public class Stream {
 
     private String username, title, description, codingCategory, difficulty,
-            language, viewingURL;
+            language, viewingURL, thumbnailURL;
     boolean live;
     private int viewCount;
+
+
+    private Bitmap thumbnail;
 
     public Stream() {
         username = "NULLOBJECT";
@@ -18,13 +27,15 @@ public class Stream {
         difficulty = "NULLOBJECT";
         language = "NULLOBJECT";
         viewingURL = "NULLOBJECT";
+        thumbnailURL = "NULLOBJECT";
         live = false;
         viewCount = 0;
+        thumbnail = null;
     }
 
     public Stream(String title, String username, String description, String codingCategory,
                   String difficulty, String language, String viewingURL, boolean live, int
-                           viewCount) {
+                          viewCount, String thumbnailURL) {
 
         this.title = title;
         this.username = username;
@@ -35,6 +46,40 @@ public class Stream {
         this.viewingURL = viewingURL;
         this.live = live;
         this.viewCount = viewCount;
+        this.thumbnailURL = thumbnailURL;
+
+        downloadImage(this.thumbnailURL, new BitmapCallack() {
+            @Override
+            public void bitmapResponse(Bitmap source) {
+                thumbnail = source;
+            }
+        });
+
+    }
+
+
+    public interface BitmapCallack {
+        public void bitmapResponse(Bitmap source);
+    }
+
+    private void downloadImage(String URL, final BitmapCallack callback) {
+
+
+        AsyncHttpClient client = new AsyncHttpClient();
+
+        client.get(URL, new AsyncHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+
+                callback.bitmapResponse(BitmapFactory.decodeByteArray(responseBody, 0, responseBody.length));
+
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+
+            }
+        });
 
     }
 
@@ -108,5 +153,13 @@ public class Stream {
 
     public void setViewCount(int viewCount) {
         this.viewCount = viewCount;
+    }
+
+    public Bitmap getThumbnail() {
+        return thumbnail;
+    }
+
+    public void setThumbnail(Bitmap thumbnail) {
+        this.thumbnail = thumbnail;
     }
 }

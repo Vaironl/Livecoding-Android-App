@@ -1,4 +1,4 @@
-package dozapps.com.livecodingtv;
+package dozapps.com.livecodingtv.SlidingTab;
 
 /*
  * Copyright 2014 Google Inc. All rights reserved.

@@ -1,8 +1,12 @@
-package dozapps.com.livecodingtv;
+package dozapps.com.livecodingtv.VideoPlayer;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
+
+import dozapps.com.livecodingtv.Tabs.Tab1;
+import dozapps.com.livecodingtv.Tabs.Tab2;
+import dozapps.com.livecodingtv.Tabs.Tab3;
 
 /**
  * Created by vaironl on 4/17/16.

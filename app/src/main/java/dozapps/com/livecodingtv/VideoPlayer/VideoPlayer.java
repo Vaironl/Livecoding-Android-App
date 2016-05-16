@@ -1,4 +1,4 @@
-package dozapps.com.livecodingtv;
+package dozapps.com.livecodingtv.VideoPlayer;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -8,6 +8,7 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.VideoView;
 
+import dozapps.com.livecodingtv.R;
 import io.vov.vitamio.LibsChecker;
 import io.vov.vitamio.MediaPlayer;
 import io.vov.vitamio.widget.MediaController;

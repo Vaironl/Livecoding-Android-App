@@ -25,7 +25,7 @@
             <category android:name="android.intent.category.LIVESTREAMS"/>
         </intent-filter>
     </activity>
-        <activity android:name=".VideoPlayer">
+        <activity android:name=".VideoPlayer.VideoPlayer">
             <intent-filter>
                 <action android:name="android.intent.action.VIDEOPLAYER"/>
 
