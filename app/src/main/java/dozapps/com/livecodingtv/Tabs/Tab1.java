@@ -57,7 +57,6 @@ public class Tab1 extends Fragment implements SwipeRefreshLayout.OnRefreshListen
 
                 Intent videoPlayerIntent = new Intent(Tab1.this.getActivity(), VideoPlayer.class);
                 videoPlayerIntent.putExtra("videoURL", streamList.get(position).getViewingURL());
-                videoPlayerIntent.putExtra("media", 5);
                 startActivity(videoPlayerIntent);
             }
         });

@@ -60,7 +60,7 @@ public class Livecoding_API {
                         viewCount = user.getInt("viewers_overall");
                         thumbnailURL = user.getString("thumbnail_url");
 
-                        System.out.println("VIDEO: "+ title);
+                        System.out.println("VIDEO: " + title);
 
 
                         Tab2.addVideo(new Stream(title, username, description,
@@ -94,7 +94,6 @@ public class Livecoding_API {
                     JSONArray results = response.getJSONArray("results");
 
 
-
                     for (int index = 0; index < results.length(); index++) {
                         JSONObject user = results.getJSONObject(index);
                         if (user.getBoolean("is_live")) {
@@ -111,7 +110,7 @@ public class Livecoding_API {
                             codingCategory = user.getString("coding_category");
                             difficulty = user.getString("difficulty");
                             language = user.getString("language");
-                            viewingURL = user.getJSONArray("viewing_urls").get(0).toString();
+                            viewingURL = user.getJSONArray("viewing_urls").get(2).toString();
                             viewCount = user.getInt("viewers_live");
                             thumbnailURL = user.getString("thumbnail_url");
 
